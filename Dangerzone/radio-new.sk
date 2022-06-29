@@ -1,0 +1,114 @@
+options:
+    dzradio-autodisconnect-onquit: true
+command /l:
+	trigger:
+		send {dzradio::jobs::*} to player
+	
+on load:
+    set {dzradio::jobs::mtf} to "&b&lMTF"
+    set {dzradio::jobs::sd} to "&7&lSD"
+    set {dzradio::jobs::scd} to "&e&lScD"
+    set {dzradio::jobs::apu} to "&9&lAPU"
+    set {dzradio::jobs::sru} to "&c&lSRU"
+    set {dzradio::jobs::mtf-su} to "&2&lMTF-SU"
+    set {dzradio::jobs::isd} to "&5&lISD"
+    set {dzradio::jobs::rrt} to "&d&lRRT"
+    set {dzradio::jobs::help} to "&a&lEMERGENCY"
+    set {dzradio::jobs::staff} to "&4&lSTAFF"
+    set {dzradio::language::format} to "&7&l• <prefix> &7<player> &8» &f<message>"
+    set {dzradio::language::connection} to "&8• &aYou &a&nconnected&r &ayour radio to channel &2<argument>"
+    set {dzradio::language::disconnection} to "&8• &cYou &c&ndisconnected&r &cyour radio from channel &4<argument>"
+    set {dzradio::language::nopermission} to "&8• &cYou are not authorized to connect or speak on this channel"
+    set {dzradio::language::nochannel} to "&8• &7No radio channels reachable with this name: &c<argument>"
+    set {dzradio::language::noargument} to "&8• &7You must specify a channel name to connect to"
+
+function dzradio_connect(p: player, t: text):
+    set {_message} to "%{dzradio::language::connection}%"
+    replace all "<argument>" in {_message} with {_t}
+    send {_message} to {_p}
+
+    set {dzradio::players::%{_p}%} to {_t}
+
+function dzradio_disconnect(p: player):
+    set {_message} to "%{dzradio::language::disconnection}%"
+    replace all "<argument>" in {_message} with "%{dzradio::players::%{_p}%}%"
+    send {_message} to {_p}
+
+    delete {dzradio::players::%{_p}%}
+
+command /radio [<text>] [<text>]:
+    trigger:
+        if arg 1 is set:
+            if {dzradio::jobs::%arg 1%} is set:
+                if player has permission "radio.%arg 1%":
+                    if arg 2 isn't set:
+                        if {dzradio::players::%player%} is set:
+                            if {dzradio::players::%player%} isn't arg 1:
+                                dzradio_disconnect(player)
+
+                                dzradio_connect(player, arg 1)
+                            else:
+                                dzradio_disconnect(player)
+                        else:
+                            dzradio_connect(player, arg 1)
+                    else:
+                        #Default format: &7&l• <prefix> &7<playername> &8» &f<message>
+                        set {_message} to {dzradio::language::format}
+                        replace all "<prefix>" in {_message} with "%{dzradio::jobs::%arg 1%}%"
+                        replace all "<player>" in {_message} with "%player%"
+                        replace all "<message>" in {_message} with arg 2
+
+                        loop all players where [player input has permission "radio.%arg 1%"]:
+                            send {_message} to loop-player
+                else:
+                    send {dzradio::language::nopermission}
+            else:
+                set {_message} to "%{dzradio::language::nochannel}%"
+                replace all "<argument>" in {_message} with arg 1
+                send {_message}
+        else:
+            if {dzradio::players::%player%} is set:
+                dzradio_disconnect(player)
+            
+            else:
+                send {dzradio::language::noargument}
+
+
+
+on join:
+    if {dzradio::players::%player%} is set:
+        if {@dzradio-autodisconnect-onquit} isn't true:
+            if player has permission "radio.%{dzradio::players::%player%}%":
+                stop
+        
+        delete {dzradio::players::%player%}
+
+on quit:
+    if {dzradio::players::%player%} is set:
+        if {@dzradio-autodisconnect-onquit} isn't true:
+            if player has permission "radio.%{dzradio::players::%player%}%":
+                stop
+        
+        delete {dzradio::players::%player%}
+
+on chat:
+	if player's tool is {tool.radio}:
+		if {dzradio::players::%player%} is set:
+			cancel event
+			loop all players where [player input has permission "radio.%{dzradio::players::%player%}%"]:
+				set {_message} to {dzradio::language::format}
+				replace all "<prefix>" in {_message} with "%{dzradio::jobs::%{dzradio::players::%player%}%}%"
+				replace all "<player>" in {_message} with "%player%"
+				replace all "<message>" in {_message} with message
+				send {_message} to loop-player
+		else:
+			send "&7You are not connected to a channel!"
+		
+
+command /radioset:
+	aliases: /debug:radioset
+	permission: op
+	permission message: &cIn your dreams, sir.
+	trigger:
+		set {tool.radio} to player's tool
+		send "&7ok."
