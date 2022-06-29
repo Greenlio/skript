@@ -1,0 +1,1023 @@
+on skript start:
+	set {dooractive} to false
+	set {doorclosed} to true
+	set {lightscooldown} to 0
+	execute console command "/closehangerdoor"
+	
+command /closehangerdoor:
+	executable by: console
+	trigger:
+		set block at location at 478.5, 85.5, 286.5 to iron block
+		set block at location at 477.5, 85.5, 286.5 to iron block
+		set block at location at 476.5, 85.5, 286.5 to iron block
+		set block at location at 475.5, 85.5, 286.5 to iron block
+		set block at location at 474.5, 85.5, 286.5 to iron block
+		set block at location at 473.5, 85.5, 286.5 to iron block
+		set block at location at 472.5, 85.5, 286.5 to iron block
+		set block at location at 471.5, 85.5, 286.5 to iron block
+		set block at location at 470.5, 85.5, 286.5 to iron block
+		set block at location at 469.5, 85.5, 286.5 to iron block
+		set block at location at 468.5, 85.5, 286.5 to iron block
+		set block at location at 467.5, 85.5, 286.5 to iron block
+		set block at location at 466.5, 85.5, 286.5 to iron block
+		set block at location at 465.5, 85.5, 286.5 to iron block
+		set block at location at 464.5, 85.5, 286.5 to iron block
+		set block at location at 463.5, 85.5, 286.5 to iron block
+		set block at location at 462.5, 85.5, 286.5 to iron block
+		set block at location at 461.5, 85.5, 286.5 to iron block
+		set block at location at 460.5, 85.5, 286.5 to iron block
+		set block at location at 459.5, 85.5, 286.5 to iron block
+		set block at location at 458.5, 85.5, 286.5 to iron block
+		set block at location at 457.5, 85.5, 286.5 to iron block
+		set block at location at 456.5, 85.5, 286.5 to iron block
+		set block at location at 455.5, 85.5, 286.5 to iron block
+		set block at location at 454.5, 85.5, 286.5 to iron block
+		set block at location at 453.5, 85.5, 286.5 to iron block	
+		set block at location at 452.5, 85.5, 286.5 to iron block
+		set block at location at 451.5, 85.5, 286.5 to iron block
+		set block at location at 450.5, 85.5, 286.5 to iron block
+		set block at location at 449.5, 85.5, 286.5 to iron block
+		set block at location at 478.5, 84.5, 286.5 to iron block
+		set block at location at 477.5, 84.5, 286.5 to iron block
+		set block at location at 476.5, 84.5, 286.5 to iron block
+		set block at location at 475.5, 84.5, 286.5 to iron block
+		set block at location at 474.5, 84.5, 286.5 to iron block
+		set block at location at 473.5, 84.5, 286.5 to iron block
+		set block at location at 472.5, 84.5, 286.5 to iron block
+		set block at location at 471.5, 84.5, 286.5 to iron block
+		set block at location at 470.5, 84.5, 286.5 to iron block
+		set block at location at 469.5, 84.5, 286.5 to iron block
+		set block at location at 468.5, 84.5, 286.5 to iron block
+		set block at location at 467.5, 84.5, 286.5 to iron block
+		set block at location at 466.5, 84.5, 286.5 to iron block
+		set block at location at 465.5, 84.5, 286.5 to iron block
+		set block at location at 464.5, 84.5, 286.5 to iron block
+		set block at location at 463.5, 84.5, 286.5 to iron block
+		set block at location at 462.5, 84.5, 286.5 to iron block
+		set block at location at 461.5, 84.5, 286.5 to iron block
+		set block at location at 460.5, 84.5, 286.5 to iron block
+		set block at location at 459.5, 84.5, 286.5 to iron block
+		set block at location at 458.5, 84.5, 286.5 to iron block
+		set block at location at 457.5, 84.5, 286.5 to iron block
+		set block at location at 456.5, 84.5, 286.5 to iron block
+		set block at location at 455.5, 84.5, 286.5 to iron block
+		set block at location at 454.5, 84.5, 286.5 to iron block
+		set block at location at 453.5, 84.5, 286.5 to iron block	
+		set block at location at 452.5, 84.5, 286.5 to iron block
+		set block at location at 451.5, 84.5, 286.5 to iron block
+		set block at location at 450.5, 84.5, 286.5 to iron block
+		set block at location at 449.5, 84.5, 286.5 to iron block
+		set block at location at 478.5, 83.5, 286.5 to iron block
+		set block at location at 477.5, 83.5, 286.5 to iron block
+		set block at location at 476.5, 83.5, 286.5 to iron block
+		set block at location at 475.5, 83.5, 286.5 to iron block
+		set block at location at 474.5, 83.5, 286.5 to iron block
+		set block at location at 473.5, 83.5, 286.5 to iron block
+		set block at location at 472.5, 83.5, 286.5 to iron block
+		set block at location at 471.5, 83.5, 286.5 to iron block
+		set block at location at 470.5, 83.5, 286.5 to iron block
+		set block at location at 469.5, 83.5, 286.5 to iron block
+		set block at location at 468.5, 83.5, 286.5 to iron block
+		set block at location at 467.5, 83.5, 286.5 to iron block
+		set block at location at 466.5, 83.5, 286.5 to iron block
+		set block at location at 465.5, 83.5, 286.5 to iron block
+		set block at location at 464.5, 83.5, 286.5 to iron block
+		set block at location at 463.5, 83.5, 286.5 to iron block
+		set block at location at 462.5, 83.5, 286.5 to iron block
+		set block at location at 461.5, 83.5, 286.5 to iron block
+		set block at location at 460.5, 83.5, 286.5 to iron block
+		set block at location at 459.5, 83.5, 286.5 to iron block
+		set block at location at 458.5, 83.5, 286.5 to iron block
+		set block at location at 457.5, 83.5, 286.5 to iron block
+		set block at location at 456.5, 83.5, 286.5 to iron block
+		set block at location at 455.5, 83.5, 286.5 to iron block
+		set block at location at 454.5, 83.5, 286.5 to iron block
+		set block at location at 453.5, 83.5, 286.5 to iron block	
+		set block at location at 452.5, 83.5, 286.5 to iron block
+		set block at location at 451.5, 83.5, 286.5 to iron block
+		set block at location at 450.5, 83.5, 286.5 to iron block
+		set block at location at 449.5, 83.5, 286.5 to iron block
+		set block at location at 478.5, 82.5, 286.5 to iron block
+		set block at location at 477.5, 82.5, 286.5 to iron block
+		set block at location at 476.5, 82.5, 286.5 to iron block
+		set block at location at 475.5, 82.5, 286.5 to iron block
+		set block at location at 474.5, 82.5, 286.5 to iron block
+		set block at location at 473.5, 82.5, 286.5 to iron block
+		set block at location at 472.5, 82.5, 286.5 to iron block
+		set block at location at 471.5, 82.5, 286.5 to iron block
+		set block at location at 470.5, 82.5, 286.5 to iron block
+		set block at location at 469.5, 82.5, 286.5 to iron block
+		set block at location at 468.5, 82.5, 286.5 to iron block
+		set block at location at 467.5, 82.5, 286.5 to iron block
+		set block at location at 466.5, 82.5, 286.5 to iron block
+		set block at location at 465.5, 82.5, 286.5 to iron block
+		set block at location at 464.5, 82.5, 286.5 to iron block
+		set block at location at 463.5, 82.5, 286.5 to iron block
+		set block at location at 462.5, 82.5, 286.5 to iron block
+		set block at location at 461.5, 82.5, 286.5 to iron block
+		set block at location at 460.5, 82.5, 286.5 to iron block
+		set block at location at 459.5, 82.5, 286.5 to iron block
+		set block at location at 458.5, 82.5, 286.5 to iron block
+		set block at location at 457.5, 82.5, 286.5 to iron block
+		set block at location at 456.5, 82.5, 286.5 to iron block
+		set block at location at 455.5, 82.5, 286.5 to iron block
+		set block at location at 454.5, 82.5, 286.5 to iron block
+		set block at location at 453.5, 82.5, 286.5 to iron block	
+		set block at location at 452.5, 82.5, 286.5 to iron block
+		set block at location at 451.5, 82.5, 286.5 to iron block
+		set block at location at 450.5, 82.5, 286.5 to iron block
+		set block at location at 449.5, 82.5, 286.5 to iron block
+		set block at location at 478.5, 81.5, 286.5 to iron block
+		set block at location at 477.5, 81.5, 286.5 to iron block
+		set block at location at 476.5, 81.5, 286.5 to iron block
+		set block at location at 475.5, 81.5, 286.5 to iron block
+		set block at location at 474.5, 81.5, 286.5 to iron block
+		set block at location at 473.5, 81.5, 286.5 to iron block
+		set block at location at 472.5, 81.5, 286.5 to iron block
+		set block at location at 471.5, 81.5, 286.5 to iron block
+		set block at location at 470.5, 81.5, 286.5 to iron block
+		set block at location at 469.5, 81.5, 286.5 to iron block
+		set block at location at 468.5, 81.5, 286.5 to iron block
+		set block at location at 467.5, 81.5, 286.5 to iron block
+		set block at location at 466.5, 81.5, 286.5 to iron block
+		set block at location at 465.5, 81.5, 286.5 to iron block
+		set block at location at 464.5, 81.5, 286.5 to iron block
+		set block at location at 463.5, 81.5, 286.5 to iron block
+		set block at location at 462.5, 81.5, 286.5 to iron block
+		set block at location at 461.5, 81.5, 286.5 to iron block
+		set block at location at 460.5, 81.5, 286.5 to iron block
+		set block at location at 459.5, 81.5, 286.5 to iron block
+		set block at location at 458.5, 81.5, 286.5 to iron block
+		set block at location at 457.5, 81.5, 286.5 to iron block
+		set block at location at 456.5, 81.5, 286.5 to iron block
+		set block at location at 455.5, 81.5, 286.5 to iron block
+		set block at location at 454.5, 81.5, 286.5 to iron block
+		set block at location at 453.5, 81.5, 286.5 to iron block	
+		set block at location at 452.5, 81.5, 286.5 to iron block
+		set block at location at 451.5, 81.5, 286.5 to iron block
+		set block at location at 450.5, 81.5, 286.5 to iron block
+		set block at location at 449.5, 81.5, 286.5 to iron block
+		set block at location at 478.5, 80.5, 286.5 to iron block
+		set block at location at 477.5, 80.5, 286.5 to iron block
+		set block at location at 476.5, 80.5, 286.5 to iron block
+		set block at location at 475.5, 80.5, 286.5 to iron block
+		set block at location at 474.5, 80.5, 286.5 to iron block
+		set block at location at 473.5, 80.5, 286.5 to iron block
+		set block at location at 472.5, 80.5, 286.5 to iron block
+		set block at location at 471.5, 80.5, 286.5 to iron block
+		set block at location at 470.5, 80.5, 286.5 to iron block
+		set block at location at 469.5, 80.5, 286.5 to iron block
+		set block at location at 468.5, 80.5, 286.5 to iron block
+		set block at location at 467.5, 80.5, 286.5 to iron block
+		set block at location at 466.5, 80.5, 286.5 to iron block
+		set block at location at 465.5, 80.5, 286.5 to iron block
+		set block at location at 464.5, 80.5, 286.5 to iron block
+		set block at location at 463.5, 80.5, 286.5 to iron block
+		set block at location at 462.5, 80.5, 286.5 to iron block
+		set block at location at 461.5, 80.5, 286.5 to iron block
+		set block at location at 460.5, 80.5, 286.5 to iron block
+		set block at location at 459.5, 80.5, 286.5 to iron block
+		set block at location at 458.5, 80.5, 286.5 to iron block
+		set block at location at 457.5, 80.5, 286.5 to iron block
+		set block at location at 456.5, 80.5, 286.5 to iron block
+		set block at location at 455.5, 80.5, 286.5 to iron block
+		set block at location at 454.5, 80.5, 286.5 to iron block
+		set block at location at 453.5, 80.5, 286.5 to iron block	
+		set block at location at 452.5, 80.5, 286.5 to iron block
+		set block at location at 451.5, 80.5, 286.5 to iron block
+		set block at location at 450.5, 80.5, 286.5 to iron block
+		set block at location at 449.5, 80.5, 286.5 to iron block
+		set block at location at 478.5, 79.5, 286.5 to iron block
+		set block at location at 477.5, 79.5, 286.5 to iron block
+		set block at location at 476.5, 79.5, 286.5 to iron block
+		set block at location at 475.5, 79.5, 286.5 to iron block
+		set block at location at 474.5, 79.5, 286.5 to iron block
+		set block at location at 473.5, 79.5, 286.5 to iron block
+		set block at location at 472.5, 79.5, 286.5 to iron block
+		set block at location at 471.5, 79.5, 286.5 to iron block
+		set block at location at 470.5, 79.5, 286.5 to iron block
+		set block at location at 469.5, 79.5, 286.5 to iron block
+		set block at location at 468.5, 79.5, 286.5 to iron block
+		set block at location at 467.5, 79.5, 286.5 to iron block
+		set block at location at 466.5, 79.5, 286.5 to iron block
+		set block at location at 465.5, 79.5, 286.5 to iron block
+		set block at location at 464.5, 79.5, 286.5 to iron block
+		set block at location at 463.5, 79.5, 286.5 to iron block
+		set block at location at 462.5, 79.5, 286.5 to iron block
+		set block at location at 461.5, 79.5, 286.5 to iron block
+		set block at location at 460.5, 79.5, 286.5 to iron block
+		set block at location at 459.5, 79.5, 286.5 to iron block
+		set block at location at 458.5, 79.5, 286.5 to iron block
+		set block at location at 457.5, 79.5, 286.5 to iron block
+		set block at location at 456.5, 79.5, 286.5 to iron block
+		set block at location at 455.5, 79.5, 286.5 to iron block
+		set block at location at 454.5, 79.5, 286.5 to iron block
+		set block at location at 453.5, 79.5, 286.5 to iron block	
+		set block at location at 452.5, 79.5, 286.5 to iron block
+		set block at location at 451.5, 79.5, 286.5 to iron block
+		set block at location at 450.5, 79.5, 286.5 to iron block
+		set block at location at 449.5, 79.5, 286.5 to iron block
+		set block at location at 478.5, 78.5, 286.5 to iron block
+		set block at location at 477.5, 78.5, 286.5 to iron block
+		set block at location at 476.5, 78.5, 286.5 to iron block
+		set block at location at 475.5, 78.5, 286.5 to iron block
+		set block at location at 474.5, 78.5, 286.5 to iron block
+		set block at location at 473.5, 78.5, 286.5 to iron block
+		set block at location at 472.5, 78.5, 286.5 to iron block
+		set block at location at 471.5, 78.5, 286.5 to iron block
+		set block at location at 470.5, 78.5, 286.5 to iron block
+		set block at location at 469.5, 78.5, 286.5 to iron block
+		set block at location at 468.5, 78.5, 286.5 to iron block
+		set block at location at 467.5, 78.5, 286.5 to iron block
+		set block at location at 466.5, 78.5, 286.5 to iron block
+		set block at location at 465.5, 78.5, 286.5 to iron block
+		set block at location at 464.5, 78.5, 286.5 to iron block
+		set block at location at 463.5, 78.5, 286.5 to iron block
+		set block at location at 462.5, 78.5, 286.5 to iron block
+		set block at location at 461.5, 78.5, 286.5 to iron block
+		set block at location at 460.5, 78.5, 286.5 to iron block
+		set block at location at 459.5, 78.5, 286.5 to iron block
+		set block at location at 458.5, 78.5, 286.5 to iron block
+		set block at location at 457.5, 78.5, 286.5 to iron block
+		set block at location at 456.5, 78.5, 286.5 to iron block
+		set block at location at 455.5, 78.5, 286.5 to iron block
+		set block at location at 454.5, 78.5, 286.5 to iron block
+		set block at location at 453.5, 78.5, 286.5 to iron block	
+		set block at location at 452.5, 78.5, 286.5 to iron block
+		set block at location at 451.5, 78.5, 286.5 to iron block
+		set block at location at 450.5, 78.5, 286.5 to iron block
+		set block at location at 449.5, 78.5, 286.5 to iron block
+		set block at location at 478.5, 77.5, 286.5 to iron block
+		set block at location at 477.5, 77.5, 286.5 to iron block
+		set block at location at 476.5, 77.5, 286.5 to iron block
+		set block at location at 475.5, 77.5, 286.5 to iron block
+		set block at location at 474.5, 77.5, 286.5 to iron block
+		set block at location at 473.5, 77.5, 286.5 to iron block
+		set block at location at 472.5, 77.5, 286.5 to iron block
+		set block at location at 471.5, 77.5, 286.5 to iron block
+		set block at location at 470.5, 77.5, 286.5 to iron block
+		set block at location at 469.5, 77.5, 286.5 to iron block
+		set block at location at 468.5, 77.5, 286.5 to iron block
+		set block at location at 467.5, 77.5, 286.5 to iron block
+		set block at location at 466.5, 77.5, 286.5 to iron block
+		set block at location at 465.5, 77.5, 286.5 to iron block
+		set block at location at 464.5, 77.5, 286.5 to iron block
+		set block at location at 463.5, 77.5, 286.5 to iron block
+		set block at location at 462.5, 77.5, 286.5 to iron block
+		set block at location at 461.5, 77.5, 286.5 to iron block
+		set block at location at 460.5, 77.5, 286.5 to iron block
+		set block at location at 459.5, 77.5, 286.5 to iron block
+		set block at location at 458.5, 77.5, 286.5 to iron block
+		set block at location at 457.5, 77.5, 286.5 to iron block
+		set block at location at 456.5, 77.5, 286.5 to iron block
+		set block at location at 455.5, 77.5, 286.5 to iron block
+		set block at location at 454.5, 77.5, 286.5 to iron block
+		set block at location at 453.5, 77.5, 286.5 to iron block	
+		set block at location at 452.5, 77.5, 286.5 to iron block
+		set block at location at 451.5, 77.5, 286.5 to iron block
+		set block at location at 450.5, 77.5, 286.5 to iron block
+		set block at location at 449.5, 77.5, 286.5 to iron block
+		set block at location at 478.5, 76.5, 286.5 to iron block
+		set block at location at 477.5, 76.5, 286.5 to iron block
+		set block at location at 476.5, 76.5, 286.5 to iron block
+		set block at location at 475.5, 76.5, 286.5 to iron block
+		set block at location at 474.5, 76.5, 286.5 to iron block
+		set block at location at 473.5, 76.5, 286.5 to iron block
+		set block at location at 472.5, 76.5, 286.5 to iron block
+		set block at location at 471.5, 76.5, 286.5 to iron block
+		set block at location at 470.5, 76.5, 286.5 to iron block
+		set block at location at 469.5, 76.5, 286.5 to iron block
+		set block at location at 468.5, 76.5, 286.5 to iron block
+		set block at location at 467.5, 76.5, 286.5 to iron block
+		set block at location at 466.5, 76.5, 286.5 to iron block
+		set block at location at 465.5, 76.5, 286.5 to iron block
+		set block at location at 464.5, 76.5, 286.5 to iron block
+		set block at location at 463.5, 76.5, 286.5 to iron block
+		set block at location at 462.5, 76.5, 286.5 to iron block
+		set block at location at 461.5, 76.5, 286.5 to iron block
+		set block at location at 460.5, 76.5, 286.5 to iron block
+		set block at location at 459.5, 76.5, 286.5 to iron block
+		set block at location at 458.5, 76.5, 286.5 to iron block
+		set block at location at 457.5, 76.5, 286.5 to iron block
+		set block at location at 456.5, 76.5, 286.5 to iron block
+		set block at location at 455.5, 76.5, 286.5 to iron block
+		set block at location at 454.5, 76.5, 286.5 to iron block
+		set block at location at 453.5, 76.5, 286.5 to iron block
+		set block at location at 452.5, 76.5, 286.5 to iron block
+		set block at location at 451.5, 76.5, 286.5 to iron block
+		set block at location at 450.5, 76.5, 286.5 to iron block
+		set block at location at 449.5, 76.5, 286.5 to iron block
+
+function sitecp(p: player):
+	open virtual chest with size 3 named "&4Site Control Point" to {_p}
+	format gui slot 0 of {_p} with black stained glass pane
+	format gui slot 1 of {_p} with red stained glass pane
+	format gui slot 2 of {_p} with black stained glass pane
+	format gui slot 3 of {_p} with red stained glass pane
+	format gui slot 4 of {_p} with black stained glass pane
+	format gui slot 5 of {_p} with red stained glass pane
+	format gui slot 6 of {_p} with black stained glass pane
+	format gui slot 7 of {_p} with red stained glass pane
+	format gui slot 8 of {_p} with black stained glass pane
+	format gui slot 9 of {_p} with red stained glass pane
+	format gui slot 17 of {_p} with red stained glass pane
+	format gui slot 18 of {_p} with black stained glass pane
+	format gui slot 19 of {_p} with red stained glass pane
+	format gui slot 20 of {_p} with black stained glass pane
+	format gui slot 21 of {_p} with red stained glass pane
+	format gui slot 22 of {_p} with black stained glass pane
+	format gui slot 23 of {_p} with red stained glass pane
+	format gui slot 24 of {_p} with black stained glass pane
+	format gui slot 25 of {_p} with red stained glass pane
+	format gui slot 26 of {_p} with black stained glass pane
+	format gui slot 11 of {_p} with redstone lamp named "&eSabatoge Lights" with lore "&rCooldown: &r%{lightscooldown}% &rminutes" to run:
+		close inventory of {_p}
+		if {lightscooldown} is less than 1:
+			loop all players:
+				apply blindness to loop-player for 10 seconds
+				apply slowness to loop-player for 10 seconds
+				set {lightscooldown} to 10
+				wait 10 minutes
+				set {lightscooldown} to 0
+		else:
+			send "&4Lights are on cooldown" to {_p}
+	format gui slot 12 of {_p} with light gray stained glass pane named "-"
+	format gui slot 13 of {_p} with light gray stained glass pane named "-"
+	format gui slot 14 of {_p} with light gray stained glass pane named "-"
+	format gui slot 15 of {_p} with iron door named "&7Doors" to run:
+		open virtual chest with size 3 named "&4Aircraft Hanger Door Control" to {_p}
+		format gui slot 0 of {_p} with black stained glass pane
+		format gui slot 1 of {_p} with red stained glass pane
+		format gui slot 2 of {_p} with black stained glass pane
+		format gui slot 3 of {_p} with red stained glass pane
+		format gui slot 4 of {_p} with black stained glass pane
+		format gui slot 5 of {_p} with red stained glass pane
+		format gui slot 6 of {_p} with black stained glass pane
+		format gui slot 7 of {_p} with red stained glass pane
+		format gui slot 8 of {_p} with black stained glass pane
+		format gui slot 9 of {_p} with red stained glass pane
+		format gui slot 17 of {_p} with red stained glass pane
+		format gui slot 18 of {_p} with black stained glass pane
+		format gui slot 19 of {_p} with red stained glass pane
+		format gui slot 20 of {_p} with black stained glass pane
+		format gui slot 21 of {_p} with red stained glass pane
+		format gui slot 22 of {_p} with black stained glass pane
+		format gui slot 23 of {_p} with red stained glass pane
+		format gui slot 24 of {_p} with black stained glass pane
+		format gui slot 25 of {_p} with red stained glass pane
+		format gui slot 26 of {_p} with black stained glass pane
+		format gui slot 11 of {_p} with iron door named "&4Open Hanger" to run:
+			close inventory of {_p}
+			if {dooractive} is false:
+				if {doorclosed} is true:
+					set {dooractive} to true
+					set {doorclosed} to false
+					send "&4Hanger opening." to {_p}
+					wait 3 seconds
+					set block at location at 478.5, 76.5, 286.5 to air
+					set block at location at 477.5, 76.5, 286.5 to air
+					set block at location at 476.5, 76.5, 286.5 to air
+					set block at location at 475.5, 76.5, 286.5 to air
+					set block at location at 474.5, 76.5, 286.5 to air
+					set block at location at 473.5, 76.5, 286.5 to air
+					set block at location at 472.5, 76.5, 286.5 to air
+					set block at location at 471.5, 76.5, 286.5 to air
+					set block at location at 470.5, 76.5, 286.5 to air
+					set block at location at 469.5, 76.5, 286.5 to air
+					set block at location at 468.5, 76.5, 286.5 to air
+					set block at location at 467.5, 76.5, 286.5 to air
+					set block at location at 466.5, 76.5, 286.5 to air
+					set block at location at 465.5, 76.5, 286.5 to air
+					set block at location at 464.5, 76.5, 286.5 to air
+					set block at location at 463.5, 76.5, 286.5 to air
+					set block at location at 462.5, 76.5, 286.5 to air
+					set block at location at 461.5, 76.5, 286.5 to air
+					set block at location at 460.5, 76.5, 286.5 to air
+					set block at location at 459.5, 76.5, 286.5 to air
+					set block at location at 458.5, 76.5, 286.5 to air
+					set block at location at 457.5, 76.5, 286.5 to air
+					set block at location at 456.5, 76.5, 286.5 to air
+					set block at location at 455.5, 76.5, 286.5 to air
+					set block at location at 454.5, 76.5, 286.5 to air
+					set block at location at 453.5, 76.5, 286.5 to air
+					set block at location at 452.5, 76.5, 286.5 to air
+					set block at location at 451.5, 76.5, 286.5 to air
+					set block at location at 450.5, 76.5, 286.5 to air
+					set block at location at 449.5, 76.5, 286.5 to air
+					wait 1 second
+					set block at location at 478.5, 77.5, 286.5 to air
+					set block at location at 477.5, 77.5, 286.5 to air
+					set block at location at 476.5, 77.5, 286.5 to air
+					set block at location at 475.5, 77.5, 286.5 to air
+					set block at location at 474.5, 77.5, 286.5 to air
+					set block at location at 473.5, 77.5, 286.5 to air
+					set block at location at 472.5, 77.5, 286.5 to air
+					set block at location at 471.5, 77.5, 286.5 to air
+					set block at location at 470.5, 77.5, 286.5 to air
+					set block at location at 469.5, 77.5, 286.5 to air
+					set block at location at 468.5, 77.5, 286.5 to air
+					set block at location at 467.5, 77.5, 286.5 to air
+					set block at location at 466.5, 77.5, 286.5 to air
+					set block at location at 465.5, 77.5, 286.5 to air
+					set block at location at 464.5, 77.5, 286.5 to air
+					set block at location at 463.5, 77.5, 286.5 to air
+					set block at location at 462.5, 77.5, 286.5 to air
+					set block at location at 461.5, 77.5, 286.5 to air
+					set block at location at 460.5, 77.5, 286.5 to air
+					set block at location at 459.5, 77.5, 286.5 to air
+					set block at location at 458.5, 77.5, 286.5 to air
+					set block at location at 457.5, 77.5, 286.5 to air
+					set block at location at 456.5, 77.5, 286.5 to air
+					set block at location at 455.5, 77.5, 286.5 to air
+					set block at location at 454.5, 77.5, 286.5 to air
+					set block at location at 453.5, 77.5, 286.5 to air	
+					set block at location at 452.5, 77.5, 286.5 to air
+					set block at location at 451.5, 77.5, 286.5 to air
+					set block at location at 450.5, 77.5, 286.5 to air
+					set block at location at 449.5, 77.5, 286.5 to air
+					wait 1 second
+					set block at location at 478.5, 78.5, 286.5 to air
+					set block at location at 477.5, 78.5, 286.5 to air
+					set block at location at 476.5, 78.5, 286.5 to air
+					set block at location at 475.5, 78.5, 286.5 to air
+					set block at location at 474.5, 78.5, 286.5 to air
+					set block at location at 473.5, 78.5, 286.5 to air
+					set block at location at 472.5, 78.5, 286.5 to air
+					set block at location at 471.5, 78.5, 286.5 to air
+					set block at location at 470.5, 78.5, 286.5 to air
+					set block at location at 469.5, 78.5, 286.5 to air
+					set block at location at 468.5, 78.5, 286.5 to air
+					set block at location at 467.5, 78.5, 286.5 to air
+					set block at location at 466.5, 78.5, 286.5 to air
+					set block at location at 465.5, 78.5, 286.5 to air
+					set block at location at 464.5, 78.5, 286.5 to air
+					set block at location at 463.5, 78.5, 286.5 to air
+					set block at location at 462.5, 78.5, 286.5 to air
+					set block at location at 461.5, 78.5, 286.5 to air
+					set block at location at 460.5, 78.5, 286.5 to air
+					set block at location at 459.5, 78.5, 286.5 to air
+					set block at location at 458.5, 78.5, 286.5 to air
+					set block at location at 457.5, 78.5, 286.5 to air
+					set block at location at 456.5, 78.5, 286.5 to air
+					set block at location at 455.5, 78.5, 286.5 to air
+					set block at location at 454.5, 78.5, 286.5 to air
+					set block at location at 453.5, 78.5, 286.5 to air	
+					set block at location at 452.5, 78.5, 286.5 to air
+					set block at location at 451.5, 78.5, 286.5 to air
+					set block at location at 450.5, 78.5, 286.5 to air
+					set block at location at 449.5, 78.5, 286.5 to air
+					wait 1 second
+					set block at location at 478.5, 79.5, 286.5 to air
+					set block at location at 477.5, 79.5, 286.5 to air
+					set block at location at 476.5, 79.5, 286.5 to air
+					set block at location at 475.5, 79.5, 286.5 to air
+					set block at location at 474.5, 79.5, 286.5 to air
+					set block at location at 473.5, 79.5, 286.5 to air
+					set block at location at 472.5, 79.5, 286.5 to air
+					set block at location at 471.5, 79.5, 286.5 to air
+					set block at location at 470.5, 79.5, 286.5 to air
+					set block at location at 469.5, 79.5, 286.5 to air
+					set block at location at 468.5, 79.5, 286.5 to air
+					set block at location at 467.5, 79.5, 286.5 to air
+					set block at location at 466.5, 79.5, 286.5 to air
+					set block at location at 465.5, 79.5, 286.5 to air
+					set block at location at 464.5, 79.5, 286.5 to air
+					set block at location at 463.5, 79.5, 286.5 to air
+					set block at location at 462.5, 79.5, 286.5 to air
+					set block at location at 461.5, 79.5, 286.5 to air
+					set block at location at 460.5, 79.5, 286.5 to air
+					set block at location at 459.5, 79.5, 286.5 to air
+					set block at location at 458.5, 79.5, 286.5 to air
+					set block at location at 457.5, 79.5, 286.5 to air
+					set block at location at 456.5, 79.5, 286.5 to air
+					set block at location at 455.5, 79.5, 286.5 to air
+					set block at location at 454.5, 79.5, 286.5 to air
+					set block at location at 453.5, 79.5, 286.5 to air	
+					set block at location at 452.5, 79.5, 286.5 to air
+					set block at location at 451.5, 79.5, 286.5 to air
+					set block at location at 450.5, 79.5, 286.5 to air
+					set block at location at 449.5, 79.5, 286.5 to air
+					wait 1 second
+					set block at location at 478.5, 80.5, 286.5 to air
+					set block at location at 477.5, 80.5, 286.5 to air
+					set block at location at 476.5, 80.5, 286.5 to air
+					set block at location at 475.5, 80.5, 286.5 to air
+					set block at location at 474.5, 80.5, 286.5 to air
+					set block at location at 473.5, 80.5, 286.5 to air
+					set block at location at 472.5, 80.5, 286.5 to air
+					set block at location at 471.5, 80.5, 286.5 to air
+					set block at location at 470.5, 80.5, 286.5 to air
+					set block at location at 469.5, 80.5, 286.5 to air
+					set block at location at 468.5, 80.5, 286.5 to air
+					set block at location at 467.5, 80.5, 286.5 to air
+					set block at location at 466.5, 80.5, 286.5 to air
+					set block at location at 465.5, 80.5, 286.5 to air
+					set block at location at 464.5, 80.5, 286.5 to air
+					set block at location at 463.5, 80.5, 286.5 to air
+					set block at location at 462.5, 80.5, 286.5 to air
+					set block at location at 461.5, 80.5, 286.5 to air
+					set block at location at 460.5, 80.5, 286.5 to air
+					set block at location at 459.5, 80.5, 286.5 to air
+					set block at location at 458.5, 80.5, 286.5 to air
+					set block at location at 457.5, 80.5, 286.5 to air
+					set block at location at 456.5, 80.5, 286.5 to air
+					set block at location at 455.5, 80.5, 286.5 to air
+					set block at location at 454.5, 80.5, 286.5 to air
+					set block at location at 453.5, 80.5, 286.5 to air	
+					set block at location at 452.5, 80.5, 286.5 to air
+					set block at location at 451.5, 80.5, 286.5 to air
+					set block at location at 450.5, 80.5, 286.5 to air
+					set block at location at 449.5, 80.5, 286.5 to air
+					wait 1 second
+					set block at location at 478.5, 81.5, 286.5 to air
+					set block at location at 477.5, 81.5, 286.5 to air
+					set block at location at 476.5, 81.5, 286.5 to air
+					set block at location at 475.5, 81.5, 286.5 to air
+					set block at location at 474.5, 81.5, 286.5 to air
+					set block at location at 473.5, 81.5, 286.5 to air
+					set block at location at 472.5, 81.5, 286.5 to air
+					set block at location at 471.5, 81.5, 286.5 to air
+					set block at location at 470.5, 81.5, 286.5 to air
+					set block at location at 469.5, 81.5, 286.5 to air
+					set block at location at 468.5, 81.5, 286.5 to air
+					set block at location at 467.5, 81.5, 286.5 to air
+					set block at location at 466.5, 81.5, 286.5 to air
+					set block at location at 465.5, 81.5, 286.5 to air
+					set block at location at 464.5, 81.5, 286.5 to air
+					set block at location at 463.5, 81.5, 286.5 to air
+					set block at location at 462.5, 81.5, 286.5 to air
+					set block at location at 461.5, 81.5, 286.5 to air
+					set block at location at 460.5, 81.5, 286.5 to air
+					set block at location at 459.5, 81.5, 286.5 to air
+					set block at location at 458.5, 81.5, 286.5 to air
+					set block at location at 457.5, 81.5, 286.5 to air
+					set block at location at 456.5, 81.5, 286.5 to air
+					set block at location at 455.5, 81.5, 286.5 to air
+					set block at location at 454.5, 81.5, 286.5 to air
+					set block at location at 453.5, 81.5, 286.5 to air	
+					set block at location at 452.5, 81.5, 286.5 to air
+					set block at location at 451.5, 81.5, 286.5 to air
+					set block at location at 450.5, 81.5, 286.5 to air
+					set block at location at 449.5, 81.5, 286.5 to air
+					wait 1 second
+					set block at location at 478.5, 82.5, 286.5 to air
+					set block at location at 477.5, 82.5, 286.5 to air
+					set block at location at 476.5, 82.5, 286.5 to air
+					set block at location at 475.5, 82.5, 286.5 to air
+					set block at location at 474.5, 82.5, 286.5 to air
+					set block at location at 473.5, 82.5, 286.5 to air
+					set block at location at 472.5, 82.5, 286.5 to air
+					set block at location at 471.5, 82.5, 286.5 to air
+					set block at location at 470.5, 82.5, 286.5 to air
+					set block at location at 469.5, 82.5, 286.5 to air
+					set block at location at 468.5, 82.5, 286.5 to air
+					set block at location at 467.5, 82.5, 286.5 to air
+					set block at location at 466.5, 82.5, 286.5 to air
+					set block at location at 465.5, 82.5, 286.5 to air
+					set block at location at 464.5, 82.5, 286.5 to air
+					set block at location at 463.5, 82.5, 286.5 to air
+					set block at location at 462.5, 82.5, 286.5 to air
+					set block at location at 461.5, 82.5, 286.5 to air
+					set block at location at 460.5, 82.5, 286.5 to air
+					set block at location at 459.5, 82.5, 286.5 to air
+					set block at location at 458.5, 82.5, 286.5 to air
+					set block at location at 457.5, 82.5, 286.5 to air
+					set block at location at 456.5, 82.5, 286.5 to air
+					set block at location at 455.5, 82.5, 286.5 to air
+					set block at location at 454.5, 82.5, 286.5 to air
+					set block at location at 453.5, 82.5, 286.5 to air	
+					set block at location at 452.5, 82.5, 286.5 to air
+					set block at location at 451.5, 82.5, 286.5 to air
+					set block at location at 450.5, 82.5, 286.5 to air
+					set block at location at 449.5, 82.5, 286.5 to air
+					wait 1 second
+					set block at location at 478.5, 83.5, 286.5 to air
+					set block at location at 477.5, 83.5, 286.5 to air
+					set block at location at 476.5, 83.5, 286.5 to air
+					set block at location at 475.5, 83.5, 286.5 to air
+					set block at location at 474.5, 83.5, 286.5 to air
+					set block at location at 473.5, 83.5, 286.5 to air
+					set block at location at 472.5, 83.5, 286.5 to air
+					set block at location at 471.5, 83.5, 286.5 to air
+					set block at location at 470.5, 83.5, 286.5 to air
+					set block at location at 469.5, 83.5, 286.5 to air
+					set block at location at 468.5, 83.5, 286.5 to air
+					set block at location at 467.5, 83.5, 286.5 to air
+					set block at location at 466.5, 83.5, 286.5 to air
+					set block at location at 465.5, 83.5, 286.5 to air
+					set block at location at 464.5, 83.5, 286.5 to air
+					set block at location at 463.5, 83.5, 286.5 to air
+					set block at location at 462.5, 83.5, 286.5 to air
+					set block at location at 461.5, 83.5, 286.5 to air
+					set block at location at 460.5, 83.5, 286.5 to air
+					set block at location at 459.5, 83.5, 286.5 to air
+					set block at location at 458.5, 83.5, 286.5 to air
+					set block at location at 457.5, 83.5, 286.5 to air
+					set block at location at 456.5, 83.5, 286.5 to air
+					set block at location at 455.5, 83.5, 286.5 to air
+					set block at location at 454.5, 83.5, 286.5 to air
+					set block at location at 453.5, 83.5, 286.5 to air	
+					set block at location at 452.5, 83.5, 286.5 to air
+					set block at location at 451.5, 83.5, 286.5 to air
+					set block at location at 450.5, 83.5, 286.5 to air
+					set block at location at 449.5, 83.5, 286.5 to air
+					wait 1 second
+					set block at location at 478.5, 84.5, 286.5 to air
+					set block at location at 477.5, 84.5, 286.5 to air
+					set block at location at 476.5, 84.5, 286.5 to air
+					set block at location at 475.5, 84.5, 286.5 to air
+					set block at location at 474.5, 84.5, 286.5 to air
+					set block at location at 473.5, 84.5, 286.5 to air
+					set block at location at 472.5, 84.5, 286.5 to air
+					set block at location at 471.5, 84.5, 286.5 to air
+					set block at location at 470.5, 84.5, 286.5 to air
+					set block at location at 469.5, 84.5, 286.5 to air
+					set block at location at 468.5, 84.5, 286.5 to air
+					set block at location at 467.5, 84.5, 286.5 to air
+					set block at location at 466.5, 84.5, 286.5 to air
+					set block at location at 465.5, 84.5, 286.5 to air
+					set block at location at 464.5, 84.5, 286.5 to air
+					set block at location at 463.5, 84.5, 286.5 to air
+					set block at location at 462.5, 84.5, 286.5 to air
+					set block at location at 461.5, 84.5, 286.5 to air
+					set block at location at 460.5, 84.5, 286.5 to air
+					set block at location at 459.5, 84.5, 286.5 to air
+					set block at location at 458.5, 84.5, 286.5 to air
+					set block at location at 457.5, 84.5, 286.5 to air
+					set block at location at 456.5, 84.5, 286.5 to air
+					set block at location at 455.5, 84.5, 286.5 to air
+					set block at location at 454.5, 84.5, 286.5 to air
+					set block at location at 453.5, 84.5, 286.5 to air	
+					set block at location at 452.5, 84.5, 286.5 to air
+					set block at location at 451.5, 84.5, 286.5 to air
+					set block at location at 450.5, 84.5, 286.5 to air
+					set block at location at 449.5, 84.5, 286.5 to air
+					wait 1 second
+					set block at location at 478.5, 85.5, 286.5 to air
+					set block at location at 477.5, 85.5, 286.5 to air
+					set block at location at 476.5, 85.5, 286.5 to air
+					set block at location at 475.5, 85.5, 286.5 to air
+					set block at location at 474.5, 85.5, 286.5 to air
+					set block at location at 473.5, 85.5, 286.5 to air
+					set block at location at 472.5, 85.5, 286.5 to air
+					set block at location at 471.5, 85.5, 286.5 to air
+					set block at location at 470.5, 85.5, 286.5 to air
+					set block at location at 469.5, 85.5, 286.5 to air
+					set block at location at 468.5, 85.5, 286.5 to air
+					set block at location at 467.5, 85.5, 286.5 to air
+					set block at location at 466.5, 85.5, 286.5 to air
+					set block at location at 465.5, 85.5, 286.5 to air
+					set block at location at 464.5, 85.5, 286.5 to air
+					set block at location at 463.5, 85.5, 286.5 to air
+					set block at location at 462.5, 85.5, 286.5 to air
+					set block at location at 461.5, 85.5, 286.5 to air
+					set block at location at 460.5, 85.5, 286.5 to air
+					set block at location at 459.5, 85.5, 286.5 to air
+					set block at location at 458.5, 85.5, 286.5 to air
+					set block at location at 457.5, 85.5, 286.5 to air
+					set block at location at 456.5, 85.5, 286.5 to air
+					set block at location at 455.5, 85.5, 286.5 to air
+					set block at location at 454.5, 85.5, 286.5 to air
+					set block at location at 453.5, 85.5, 286.5 to air	
+					set block at location at 452.5, 85.5, 286.5 to air
+					set block at location at 451.5, 85.5, 286.5 to air
+					set block at location at 450.5, 85.5, 286.5 to air
+					set block at location at 449.5, 85.5, 286.5 to air
+					set {dooractive} to false
+				else:
+					send "&4Hanger already open." to {_p}
+			else:
+				send "&4Hanger currently active." to {_p}
+		format gui slot 15 of {_p} with iron door named "&4Close Hanger" to run:
+			close inventory of {_p}
+			if {dooractive} is false:
+				if {doorclosed} is false:
+					set {dooractive} to true
+					set {doorclosed} to true
+					send "&4Hanger closing." to {_p}
+					wait 3 seconds
+					set block at location at 478.5, 85.5, 286.5 to iron block
+					set block at location at 477.5, 85.5, 286.5 to iron block
+					set block at location at 476.5, 85.5, 286.5 to iron block
+					set block at location at 475.5, 85.5, 286.5 to iron block
+					set block at location at 474.5, 85.5, 286.5 to iron block
+					set block at location at 473.5, 85.5, 286.5 to iron block
+					set block at location at 472.5, 85.5, 286.5 to iron block
+					set block at location at 471.5, 85.5, 286.5 to iron block
+					set block at location at 470.5, 85.5, 286.5 to iron block
+					set block at location at 469.5, 85.5, 286.5 to iron block
+					set block at location at 468.5, 85.5, 286.5 to iron block
+					set block at location at 467.5, 85.5, 286.5 to iron block
+					set block at location at 466.5, 85.5, 286.5 to iron block
+					set block at location at 465.5, 85.5, 286.5 to iron block
+					set block at location at 464.5, 85.5, 286.5 to iron block
+					set block at location at 463.5, 85.5, 286.5 to iron block
+					set block at location at 462.5, 85.5, 286.5 to iron block
+					set block at location at 461.5, 85.5, 286.5 to iron block
+					set block at location at 460.5, 85.5, 286.5 to iron block
+					set block at location at 459.5, 85.5, 286.5 to iron block
+					set block at location at 458.5, 85.5, 286.5 to iron block
+					set block at location at 457.5, 85.5, 286.5 to iron block
+					set block at location at 456.5, 85.5, 286.5 to iron block
+					set block at location at 455.5, 85.5, 286.5 to iron block
+					set block at location at 454.5, 85.5, 286.5 to iron block
+					set block at location at 453.5, 85.5, 286.5 to iron block	
+					set block at location at 452.5, 85.5, 286.5 to iron block
+					set block at location at 451.5, 85.5, 286.5 to iron block
+					set block at location at 450.5, 85.5, 286.5 to iron block
+					set block at location at 449.5, 85.5, 286.5 to iron block
+					wait 1 second
+					set block at location at 478.5, 84.5, 286.5 to iron block
+					set block at location at 477.5, 84.5, 286.5 to iron block
+					set block at location at 476.5, 84.5, 286.5 to iron block
+					set block at location at 475.5, 84.5, 286.5 to iron block
+					set block at location at 474.5, 84.5, 286.5 to iron block
+					set block at location at 473.5, 84.5, 286.5 to iron block
+					set block at location at 472.5, 84.5, 286.5 to iron block
+					set block at location at 471.5, 84.5, 286.5 to iron block
+					set block at location at 470.5, 84.5, 286.5 to iron block
+					set block at location at 469.5, 84.5, 286.5 to iron block
+					set block at location at 468.5, 84.5, 286.5 to iron block
+					set block at location at 467.5, 84.5, 286.5 to iron block
+					set block at location at 466.5, 84.5, 286.5 to iron block
+					set block at location at 465.5, 84.5, 286.5 to iron block
+					set block at location at 464.5, 84.5, 286.5 to iron block
+					set block at location at 463.5, 84.5, 286.5 to iron block
+					set block at location at 462.5, 84.5, 286.5 to iron block
+					set block at location at 461.5, 84.5, 286.5 to iron block
+					set block at location at 460.5, 84.5, 286.5 to iron block
+					set block at location at 459.5, 84.5, 286.5 to iron block
+					set block at location at 458.5, 84.5, 286.5 to iron block
+					set block at location at 457.5, 84.5, 286.5 to iron block
+					set block at location at 456.5, 84.5, 286.5 to iron block
+					set block at location at 455.5, 84.5, 286.5 to iron block
+					set block at location at 454.5, 84.5, 286.5 to iron block
+					set block at location at 453.5, 84.5, 286.5 to iron block	
+					set block at location at 452.5, 84.5, 286.5 to iron block
+					set block at location at 451.5, 84.5, 286.5 to iron block
+					set block at location at 450.5, 84.5, 286.5 to iron block
+					set block at location at 449.5, 84.5, 286.5 to iron block
+					wait 1 second
+					set block at location at 478.5, 83.5, 286.5 to iron block
+					set block at location at 477.5, 83.5, 286.5 to iron block
+					set block at location at 476.5, 83.5, 286.5 to iron block
+					set block at location at 475.5, 83.5, 286.5 to iron block
+					set block at location at 474.5, 83.5, 286.5 to iron block
+					set block at location at 473.5, 83.5, 286.5 to iron block
+					set block at location at 472.5, 83.5, 286.5 to iron block
+					set block at location at 471.5, 83.5, 286.5 to iron block
+					set block at location at 470.5, 83.5, 286.5 to iron block
+					set block at location at 469.5, 83.5, 286.5 to iron block
+					set block at location at 468.5, 83.5, 286.5 to iron block
+					set block at location at 467.5, 83.5, 286.5 to iron block
+					set block at location at 466.5, 83.5, 286.5 to iron block
+					set block at location at 465.5, 83.5, 286.5 to iron block
+					set block at location at 464.5, 83.5, 286.5 to iron block
+					set block at location at 463.5, 83.5, 286.5 to iron block
+					set block at location at 462.5, 83.5, 286.5 to iron block
+					set block at location at 461.5, 83.5, 286.5 to iron block
+					set block at location at 460.5, 83.5, 286.5 to iron block
+					set block at location at 459.5, 83.5, 286.5 to iron block
+					set block at location at 458.5, 83.5, 286.5 to iron block
+					set block at location at 457.5, 83.5, 286.5 to iron block
+					set block at location at 456.5, 83.5, 286.5 to iron block
+					set block at location at 455.5, 83.5, 286.5 to iron block
+					set block at location at 454.5, 83.5, 286.5 to iron block
+					set block at location at 453.5, 83.5, 286.5 to iron block	
+					set block at location at 452.5, 83.5, 286.5 to iron block
+					set block at location at 451.5, 83.5, 286.5 to iron block
+					set block at location at 450.5, 83.5, 286.5 to iron block
+					set block at location at 449.5, 83.5, 286.5 to iron block
+					wait 1 second
+					set block at location at 478.5, 82.5, 286.5 to iron block
+					set block at location at 477.5, 82.5, 286.5 to iron block
+					set block at location at 476.5, 82.5, 286.5 to iron block
+					set block at location at 475.5, 82.5, 286.5 to iron block
+					set block at location at 474.5, 82.5, 286.5 to iron block
+					set block at location at 473.5, 82.5, 286.5 to iron block
+					set block at location at 472.5, 82.5, 286.5 to iron block
+					set block at location at 471.5, 82.5, 286.5 to iron block
+					set block at location at 470.5, 82.5, 286.5 to iron block
+					set block at location at 469.5, 82.5, 286.5 to iron block
+					set block at location at 468.5, 82.5, 286.5 to iron block
+					set block at location at 467.5, 82.5, 286.5 to iron block
+					set block at location at 466.5, 82.5, 286.5 to iron block
+					set block at location at 465.5, 82.5, 286.5 to iron block
+					set block at location at 464.5, 82.5, 286.5 to iron block
+					set block at location at 463.5, 82.5, 286.5 to iron block
+					set block at location at 462.5, 82.5, 286.5 to iron block
+					set block at location at 461.5, 82.5, 286.5 to iron block
+					set block at location at 460.5, 82.5, 286.5 to iron block
+					set block at location at 459.5, 82.5, 286.5 to iron block
+					set block at location at 458.5, 82.5, 286.5 to iron block
+					set block at location at 457.5, 82.5, 286.5 to iron block
+					set block at location at 456.5, 82.5, 286.5 to iron block
+					set block at location at 455.5, 82.5, 286.5 to iron block
+					set block at location at 454.5, 82.5, 286.5 to iron block
+					set block at location at 453.5, 82.5, 286.5 to iron block	
+					set block at location at 452.5, 82.5, 286.5 to iron block
+					set block at location at 451.5, 82.5, 286.5 to iron block
+					set block at location at 450.5, 82.5, 286.5 to iron block
+					set block at location at 449.5, 82.5, 286.5 to iron block
+					wait 1 second
+					set block at location at 478.5, 81.5, 286.5 to iron block
+					set block at location at 477.5, 81.5, 286.5 to iron block
+					set block at location at 476.5, 81.5, 286.5 to iron block
+					set block at location at 475.5, 81.5, 286.5 to iron block
+					set block at location at 474.5, 81.5, 286.5 to iron block
+					set block at location at 473.5, 81.5, 286.5 to iron block
+					set block at location at 472.5, 81.5, 286.5 to iron block
+					set block at location at 471.5, 81.5, 286.5 to iron block
+					set block at location at 470.5, 81.5, 286.5 to iron block
+					set block at location at 469.5, 81.5, 286.5 to iron block
+					set block at location at 468.5, 81.5, 286.5 to iron block
+					set block at location at 467.5, 81.5, 286.5 to iron block
+					set block at location at 466.5, 81.5, 286.5 to iron block
+					set block at location at 465.5, 81.5, 286.5 to iron block
+					set block at location at 464.5, 81.5, 286.5 to iron block
+					set block at location at 463.5, 81.5, 286.5 to iron block
+					set block at location at 462.5, 81.5, 286.5 to iron block
+					set block at location at 461.5, 81.5, 286.5 to iron block
+					set block at location at 460.5, 81.5, 286.5 to iron block
+					set block at location at 459.5, 81.5, 286.5 to iron block
+					set block at location at 458.5, 81.5, 286.5 to iron block
+					set block at location at 457.5, 81.5, 286.5 to iron block
+					set block at location at 456.5, 81.5, 286.5 to iron block
+					set block at location at 455.5, 81.5, 286.5 to iron block
+					set block at location at 454.5, 81.5, 286.5 to iron block
+					set block at location at 453.5, 81.5, 286.5 to iron block	
+					set block at location at 452.5, 81.5, 286.5 to iron block
+					set block at location at 451.5, 81.5, 286.5 to iron block
+					set block at location at 450.5, 81.5, 286.5 to iron block
+					set block at location at 449.5, 81.5, 286.5 to iron block
+					wait 1 second
+					set block at location at 478.5, 80.5, 286.5 to iron block
+					set block at location at 477.5, 80.5, 286.5 to iron block
+					set block at location at 476.5, 80.5, 286.5 to iron block
+					set block at location at 475.5, 80.5, 286.5 to iron block
+					set block at location at 474.5, 80.5, 286.5 to iron block
+					set block at location at 473.5, 80.5, 286.5 to iron block
+					set block at location at 472.5, 80.5, 286.5 to iron block
+					set block at location at 471.5, 80.5, 286.5 to iron block
+					set block at location at 470.5, 80.5, 286.5 to iron block
+					set block at location at 469.5, 80.5, 286.5 to iron block
+					set block at location at 468.5, 80.5, 286.5 to iron block
+					set block at location at 467.5, 80.5, 286.5 to iron block
+					set block at location at 466.5, 80.5, 286.5 to iron block
+					set block at location at 465.5, 80.5, 286.5 to iron block
+					set block at location at 464.5, 80.5, 286.5 to iron block
+					set block at location at 463.5, 80.5, 286.5 to iron block
+					set block at location at 462.5, 80.5, 286.5 to iron block
+					set block at location at 461.5, 80.5, 286.5 to iron block
+					set block at location at 460.5, 80.5, 286.5 to iron block
+					set block at location at 459.5, 80.5, 286.5 to iron block
+					set block at location at 458.5, 80.5, 286.5 to iron block
+					set block at location at 457.5, 80.5, 286.5 to iron block
+					set block at location at 456.5, 80.5, 286.5 to iron block
+					set block at location at 455.5, 80.5, 286.5 to iron block
+					set block at location at 454.5, 80.5, 286.5 to iron block
+					set block at location at 453.5, 80.5, 286.5 to iron block	
+					set block at location at 452.5, 80.5, 286.5 to iron block
+					set block at location at 451.5, 80.5, 286.5 to iron block
+					set block at location at 450.5, 80.5, 286.5 to iron block
+					set block at location at 449.5, 80.5, 286.5 to iron block
+					wait 1 second
+					set block at location at 478.5, 79.5, 286.5 to iron block
+					set block at location at 477.5, 79.5, 286.5 to iron block
+					set block at location at 476.5, 79.5, 286.5 to iron block
+					set block at location at 475.5, 79.5, 286.5 to iron block
+					set block at location at 474.5, 79.5, 286.5 to iron block
+					set block at location at 473.5, 79.5, 286.5 to iron block
+					set block at location at 472.5, 79.5, 286.5 to iron block
+					set block at location at 471.5, 79.5, 286.5 to iron block
+					set block at location at 470.5, 79.5, 286.5 to iron block
+					set block at location at 469.5, 79.5, 286.5 to iron block
+					set block at location at 468.5, 79.5, 286.5 to iron block
+					set block at location at 467.5, 79.5, 286.5 to iron block
+					set block at location at 466.5, 79.5, 286.5 to iron block
+					set block at location at 465.5, 79.5, 286.5 to iron block
+					set block at location at 464.5, 79.5, 286.5 to iron block
+					set block at location at 463.5, 79.5, 286.5 to iron block
+					set block at location at 462.5, 79.5, 286.5 to iron block
+					set block at location at 461.5, 79.5, 286.5 to iron block
+					set block at location at 460.5, 79.5, 286.5 to iron block
+					set block at location at 459.5, 79.5, 286.5 to iron block
+					set block at location at 458.5, 79.5, 286.5 to iron block
+					set block at location at 457.5, 79.5, 286.5 to iron block
+					set block at location at 456.5, 79.5, 286.5 to iron block
+					set block at location at 455.5, 79.5, 286.5 to iron block
+					set block at location at 454.5, 79.5, 286.5 to iron block
+					set block at location at 453.5, 79.5, 286.5 to iron block	
+					set block at location at 452.5, 79.5, 286.5 to iron block
+					set block at location at 451.5, 79.5, 286.5 to iron block
+					set block at location at 450.5, 79.5, 286.5 to iron block
+					set block at location at 449.5, 79.5, 286.5 to iron block
+					wait 1 second
+					set block at location at 478.5, 78.5, 286.5 to iron block
+					set block at location at 477.5, 78.5, 286.5 to iron block
+					set block at location at 476.5, 78.5, 286.5 to iron block
+					set block at location at 475.5, 78.5, 286.5 to iron block
+					set block at location at 474.5, 78.5, 286.5 to iron block
+					set block at location at 473.5, 78.5, 286.5 to iron block
+					set block at location at 472.5, 78.5, 286.5 to iron block
+					set block at location at 471.5, 78.5, 286.5 to iron block
+					set block at location at 470.5, 78.5, 286.5 to iron block
+					set block at location at 469.5, 78.5, 286.5 to iron block
+					set block at location at 468.5, 78.5, 286.5 to iron block
+					set block at location at 467.5, 78.5, 286.5 to iron block
+					set block at location at 466.5, 78.5, 286.5 to iron block
+					set block at location at 465.5, 78.5, 286.5 to iron block
+					set block at location at 464.5, 78.5, 286.5 to iron block
+					set block at location at 463.5, 78.5, 286.5 to iron block
+					set block at location at 462.5, 78.5, 286.5 to iron block
+					set block at location at 461.5, 78.5, 286.5 to iron block
+					set block at location at 460.5, 78.5, 286.5 to iron block
+					set block at location at 459.5, 78.5, 286.5 to iron block
+					set block at location at 458.5, 78.5, 286.5 to iron block
+					set block at location at 457.5, 78.5, 286.5 to iron block
+					set block at location at 456.5, 78.5, 286.5 to iron block
+					set block at location at 455.5, 78.5, 286.5 to iron block
+					set block at location at 454.5, 78.5, 286.5 to iron block
+					set block at location at 453.5, 78.5, 286.5 to iron block	
+					set block at location at 452.5, 78.5, 286.5 to iron block
+					set block at location at 451.5, 78.5, 286.5 to iron block
+					set block at location at 450.5, 78.5, 286.5 to iron block
+					set block at location at 449.5, 78.5, 286.5 to iron block
+					wait 1 second
+					set block at location at 478.5, 77.5, 286.5 to iron block
+					set block at location at 477.5, 77.5, 286.5 to iron block
+					set block at location at 476.5, 77.5, 286.5 to iron block
+					set block at location at 475.5, 77.5, 286.5 to iron block
+					set block at location at 474.5, 77.5, 286.5 to iron block
+					set block at location at 473.5, 77.5, 286.5 to iron block
+					set block at location at 472.5, 77.5, 286.5 to iron block
+					set block at location at 471.5, 77.5, 286.5 to iron block
+					set block at location at 470.5, 77.5, 286.5 to iron block
+					set block at location at 469.5, 77.5, 286.5 to iron block
+					set block at location at 468.5, 77.5, 286.5 to iron block
+					set block at location at 467.5, 77.5, 286.5 to iron block
+					set block at location at 466.5, 77.5, 286.5 to iron block
+					set block at location at 465.5, 77.5, 286.5 to iron block
+					set block at location at 464.5, 77.5, 286.5 to iron block
+					set block at location at 463.5, 77.5, 286.5 to iron block
+					set block at location at 462.5, 77.5, 286.5 to iron block
+					set block at location at 461.5, 77.5, 286.5 to iron block
+					set block at location at 460.5, 77.5, 286.5 to iron block
+					set block at location at 459.5, 77.5, 286.5 to iron block
+					set block at location at 458.5, 77.5, 286.5 to iron block
+					set block at location at 457.5, 77.5, 286.5 to iron block
+					set block at location at 456.5, 77.5, 286.5 to iron block
+					set block at location at 455.5, 77.5, 286.5 to iron block
+					set block at location at 454.5, 77.5, 286.5 to iron block
+					set block at location at 453.5, 77.5, 286.5 to iron block	
+					set block at location at 452.5, 77.5, 286.5 to iron block
+					set block at location at 451.5, 77.5, 286.5 to iron block
+					set block at location at 450.5, 77.5, 286.5 to iron block
+					set block at location at 449.5, 77.5, 286.5 to iron block
+					wait 1 second
+					set block at location at 478.5, 76.5, 286.5 to iron block
+					set block at location at 477.5, 76.5, 286.5 to iron block
+					set block at location at 476.5, 76.5, 286.5 to iron block
+					set block at location at 475.5, 76.5, 286.5 to iron block
+					set block at location at 474.5, 76.5, 286.5 to iron block
+					set block at location at 473.5, 76.5, 286.5 to iron block
+					set block at location at 472.5, 76.5, 286.5 to iron block
+					set block at location at 471.5, 76.5, 286.5 to iron block
+					set block at location at 470.5, 76.5, 286.5 to iron block
+					set block at location at 469.5, 76.5, 286.5 to iron block
+					set block at location at 468.5, 76.5, 286.5 to iron block
+					set block at location at 467.5, 76.5, 286.5 to iron block
+					set block at location at 466.5, 76.5, 286.5 to iron block
+					set block at location at 465.5, 76.5, 286.5 to iron block
+					set block at location at 464.5, 76.5, 286.5 to iron block
+					set block at location at 463.5, 76.5, 286.5 to iron block
+					set block at location at 462.5, 76.5, 286.5 to iron block
+					set block at location at 461.5, 76.5, 286.5 to iron block
+					set block at location at 460.5, 76.5, 286.5 to iron block
+					set block at location at 459.5, 76.5, 286.5 to iron block
+					set block at location at 458.5, 76.5, 286.5 to iron block
+					set block at location at 457.5, 76.5, 286.5 to iron block
+					set block at location at 456.5, 76.5, 286.5 to iron block
+					set block at location at 455.5, 76.5, 286.5 to iron block
+					set block at location at 454.5, 76.5, 286.5 to iron block
+					set block at location at 453.5, 76.5, 286.5 to iron block
+					set block at location at 452.5, 76.5, 286.5 to iron block
+					set block at location at 451.5, 76.5, 286.5 to iron block
+					set block at location at 450.5, 76.5, 286.5 to iron block
+					set block at location at 449.5, 76.5, 286.5 to iron block
+					set {dooractive} to false
+				else:
+					send "&4Hanger already closed." to {_p}
+			else:
+				send "&4Hanger currently active." to {_p}
+		format gui slot 14 of {_p} with iron door named "&4SCP-
+
+
+on inventory click:
+	if name of current inventory of player contains "&4Site Control Point":
+		cancel event
+
+on right click on redstone block:
+	if location of target block is location at 470.5, 61.5, 169.5:
+		cancel event
+		sitecp(player)
