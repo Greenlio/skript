@@ -1,0 +1,51 @@
+on rightclick on entity:
+	if name of event-entity is "cicmdr":
+		execute console command "cijoin %player%"
+
+command /cijoin [<player>]:
+	executable by: console
+	trigger:
+		if arg-1 has permission "dangerzone.friendly.scpf":
+			open chest with 1 row named "&8CI Join" to arg-1
+			format slot 4 of arg-1 with red stained glass pane named "&cAccess Denied" to close then run [send "&bCI Commander: &7Shoo, foundation scum!" to arg-1]
+		if {ci.%arg-1%} is set:
+			open chest with 1 row named "&8CI Join" to arg-1
+			format slot 4 of arg-1 with red stained glass pane named "&cAccess Denied" to close then run [send "&bCI Commander: &7You're already in CI!" to arg-1]
+		else:
+			open chest with 1 row named "&8CI Join" to arg-1
+			format slot 4 of arg-1 with dark gray stained glass pane named "&7Join CI" to close then run [execute console command "cijoin2 %arg-1%"]
+		
+command /cijoin2 [<player>]:
+	executable by: console
+	trigger:
+		send "&bCI Commander: &7The CI believes in that the SCP's should be used to better ourselves. Go breach them and try bringing some to our base." to arg-1
+		execute console command "kit ci %arg-1%"
+		execute console command "cijoinfinal %arg-1%"
+command /cijoinfinal [<player>]:
+	executable by: console
+	trigger:
+		execute console command "lp user %arg-1% parent set ci"
+		set {ci.%arg-1%} to true
+		send "[CI LOGGER] %arg-1% has joined CI!" to console	
+
+on join:
+    if {ci.%player%} is true:
+        execute console command "wipeci %player%"
+
+on respawn:
+    if {ci.%player%} is true:
+        execute console command "wipeci %player%"
+
+on quit:
+    if {ci.%player%} is true:
+        execute console command "wipeci %player%"
+
+command /wipeci [<player>]:
+	executable by: console
+	trigger:
+		execute console command "clear %arg-1%"
+		execute console command "lp user %arg-1% parent set default"
+		delete {ci.%arg-1%}
+		wait 1 tick
+		execute console command "spawn %arg-1%"
+		send "[CI LOGGER] %arg-1% has left CI!" to console
