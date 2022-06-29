@@ -1,0 +1,51 @@
+command /setgroup <player>:
+	permission: dangerzone.setgroup
+	usage: &e/grant <player>
+	trigger:
+		send "&eOpening setgroup GUI.." to command sender
+		if player has permission "dangerzone.setgroup":
+			#has authorzation for all 4 departments
+			open chest with 6 rows named "&eSetgroup" to player
+			#sections
+			format slot 0 of player with yellow wool named "&eScientific Department" to be unstealable
+			format slot 9 of player with light gray wool named "&7Security Department" to be unstealable
+			format slot 18 of player with light blue wool named "&bMobile Task Force" to be unstealable
+			format slot 36 of player with light gray wool named "&7Security Department Subunits" to be unstealable
+			format slot 45 of player with light blue wool named "&bMobile Task Force Subunits" to be unstealable
+			#scd ranks
+			format slot 1 of player with paper named "&e[ScD] &fPlayer" to close then run [execute console command "lp user %arg-1% parent set scd"]
+			format slot 2 of player with paper named "&e[ScD] &fPlayer &e[Senior]" to close then run [execute console command "lp user %arg-1% parent set scdsenior"]
+			format slot 3 of player with paper named "&e[ScD] &fPlayer &5[Trainer]" to close then run [execute console command "lp user %arg-1% parent set scdtrainer"]
+			format slot 4 of player with paper named "&e[ScD] &fPlayer &c[Exploration]" to close then run [execute console command "lp user %arg-1% parent set scdexplore"]
+			format slot 5 of player with paper named "&e[ScD] &fPlayer &d[Research Manager]" to close then run [execute console command "lp user %arg-1% parent set scdrm"]
+			format slot 6 of player with paper named "&e[ScD] &fPlayer &c[CHIEF]" to close then run [execute console command "lp user %arg-1% parent set scdchief"]
+			format slot 7 of player with paper named "&e[ScD] &fPlayer &2[Director]" to close then run [execute console command "Lp user %arg-1% parent set scddirector"]
+			#sigh, that took way too long to make lol
+			format slot 10 of player with paper named "&7[SD] &fPlayer" to close then run [execute console command "lp user %arg-1% parent set sd"]
+			format slot 11 of player with paper named "&7[SD] &fPlayer &7[Senior]" to close then run [execute console command "lp user %arg-1% parent set sdsenior"]
+			format slot 12 of player with paper named "&7[SD] &fPlayer &5[Trial Trainer]" to close then run [execute console command "lp user %arg-1% parent set sdtraineetrainer"]
+			format slot 13 of player with paper named "&7[SD] &fPlayer &5[Trainer]" to close then run [execute console command "lp user %arg-1% parent set sdtrainer"]
+			format slot 14 of player with paper named "&7[SD] &fPlayer &c[Trainer Manager]" to close then run [execute console command "lp user %arg-1% parent set sdtm"]
+			format slot 15 of player with paper named "&7[SD] &fPlayer &c[CHIEF]" to close then run [execute console command "lp user %arg-1% parent set sdchief"]
+			format slot 15 of player with paper named "&7[SD] &fPlayer &2[Director]" to close then run [execute console command "lp user %arg-1% parent set sddirector"]
+			#mtf woo
+			format slot 19 of player with paper named "&b[MTF] &fPlayer &b[Trainee]" to close then run [execute console command "lp user %arg-1% parent set mtftrainee"]
+			format slot 20 of player with paper named "&b[MTF] &fPlayer" to close then run [execute console command "lp user %arg-1% parent set mtf"]
+			format slot 21 of player with paper named "&b[MTF] &fPlayer &b[Senior]" to close then run [execute console command "lp user %arg-1% parent set mtfsenior"]
+			format slot 22 of player with paper named "&b[MTF] &fPlayer &5[Trial Trainer]" to close then run [execute console command "lp user %arg-1% parent set mtftraineetrainer"]
+			format slot 23 of player with paper named "&b[MTF] &fPlayer &5[Trainer]" to close then run [execute console command "lp user %arg-1% parent set mtftrainer"]
+			format slot 24 of player with paper named "&b[MTF] &fPlayer &c[Trainer Manager]" to close then run [execute console command "lp user %arg-1% parent set mtftm"]
+			format slot 25 of player with paper named "&b[MTF] &fPlayer &c[CHIEF]" to close then run [execute console command "lp user %arg-1% parent set mtfchief"]
+			format slot 26 of player with paper named "&b[MTF] &fPlayer &2[Director]" to close then run [execute console command "lp user %arg-1% parent set mtfdirector"]
+			#do i really need to do task forces? aaa.
+			#sd task forces
+			format slot 37 of player with paper named "&7[SD] &fPlayer &3[APU]" to close then run [execute console command "lp user %arg-1% parent set apu"]
+			format slot 38 of player with paper named "&7[SD] &fPlayer &9[APU-C]" to close then run [execute console command "lp user %arg-1% parent set apu-c"]
+			format slot 39 of player with paper named "&7[SD] &fPlayer &c[SRU]" to close then run [execute console command "lp user %arg-1% parent set sru"]
+			format slot 40 of player with paper named "&7[SD] &fPlayer &c[SRU-C]" to close then run [execute console command "lp user %arg-1% parent set sru-c"]
+			#mtf task forces
+			format slot 46 of player with paper named "&b[MTF] &fPlayer &8[&9Beta-7&8]" to close then run [execute console command "lp user %arg-1% parent set beta-7"]
+			format slot 47 of player with paper named "&b[MTF] &fPlayer &9[Commander] &fBeta-7" to close then run [execute console command "lp user %arg-1% parent set beta-7cmdr"]
+			format slot 48 of player with paper named "&b[MTF] &fPlayer &6[Epsilon-9]" to close then run [execute console command "lp user %arg-1% parent set epsilon-9"]
+			format slot 49 of player with paper named "&b[MTF] &fPlayer &9[Commander] &fEpsilon-9" to close then run [execute console command "lp user %arg-1% parent set epsilon-9cmdr"]
+			format slot 50 of player with barrier named "&c&lDM Greenlio for more subunits." to be unstealable
