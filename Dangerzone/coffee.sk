@@ -1,0 +1,117 @@
+on inventory click:
+	if {coffeefinalizing::%player%} is true:
+		cancel event
+on inventory close:
+	{coffeebrewing::%player%} is set
+	delete {coffeebrewing::%player%}
+	delete {coffeerecipe::%player%::*}
+	delete {coffeefinalizing::%player%}
+on rightclick on brewing stand:
+	if {coffeetable::%event-block%} is true:
+		set {coffeebrewing::%player%} to true
+		create a new gui with id "Coffee-%player%" with virtual chest with 6 rows named "Coffee Machine": 
+			format gui slot 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 13, 15, 17, 18, 20, 22, 24, 26, 27, 28, 29, 30, 32, 33, 34, 37, 38, 39, 40, 41, 42, 43, 35, 36, 44, 45, 46, 47, 48, 50, 51, 52 and 53 with black stained glass pane named ""
+			format gui slot 10 with gray dye named "&6Glass Bottle"
+			format gui slot 12 with gray dye named "&6Base"
+			format gui slot 14 with gray dye named "&6Extra"
+			format gui slot 16 with gray dye named "&6Extra"
+			format gui slot 31 with brewing stand named "&eComplete":
+				if slot 19 of player's current inventory is glass bottle:
+					set {coffeefinalizing::%player%} to true
+					set {_1} to "%slot 21 of player's current inventory%"
+					set {_2} to "%slot 23 of player's current inventory%"
+					set {_3} to "%slot 25 of player's current inventory%"
+					add {_1} to {_coffeerecipe::*}
+					add {_2} to {_coffeerecipe::*}
+					add {_3} to {_coffeerecipe::*}
+					set {_coffeerecipe::*} to alphabetically sorted {_coffeerecipe::*}
+					loop {coffeerecipes::*}:
+						if "%{_coffeerecipe::*}%" is "%{coffee::coffeerecipe::%loop-value%::*}%":
+							set {_item} to {coffee::result::%loop-value%}
+					if {_item} is not set:
+						set {_item} to water bottle named "&fHot Water"
+					play sound "BLOCK_BREWING_STAND_BREW" at volume 10000 and pitch 1 for player at player
+					format gui slot 19 of player with air
+					format gui slot 36, 44, 45, 46, 47, 48, 50, 51, 52 and 53 with cyan stained glass pane named ""
+					wait 3.5 ticks
+					format gui slot 20, 22, 24, 26, 27, 28, 29, 30, 32, 33, 34, 37, 38, 39, 40, 41, 42, 43, 35, 36, 44, 45, 46, 47, 48, 50, 51, 52 and 53 with cyan stained glass pane named ""
+					wait 3.5 ticks
+					format gui slot 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 13, 15, 17, 18, 20, 22, 24, 26, 27, 28, 29, 30, 32, 33, 34, 37, 38, 39, 40, 41, 42, 43, 35, 36, 44, 45, 46, 47, 48, 50, 51, 52 and 53 with cyan stained glass pane named ""
+					wait 3.5 ticks
+					play sound "ITEM_BOTTLE_FILL" at volume 10000 and pitch 2 for player at player
+					format gui slot 21 of player with air
+					wait 5 ticks
+					play sound "ITEM_BOTTLE_FILL" at volume 10000 and pitch 2 for player at player
+					format gui slot 23 of player with air
+					wait 5 ticks
+					play sound "ITEM_BOTTLE_FILL" at volume 10000 and pitch 2 for player at player	
+					format gui slot 25 of player with air
+					wait 5 ticks
+					play sound "ENTITY_EXPERIENCE_ORB_PICKUP" at volume 10000 and pitch 0.45 for player at player
+					wait 5 ticks
+					play sound "ENTITY_EXPERIENCE_ORB_PICKUP" at volume 10000 and pitch 0.65 for player at player
+					wait 5 ticks
+					play sound "ENTITY_EXPERIENCE_ORB_PICKUP" at volume 10000 and pitch 0.85 for player at player
+					format gui slot 0, 1, 2, 3, 4, 5, 6, 7, 8, 9,  11, 13, 15, 17, 18, 20, 22, 24, 26, 27, 28, 29, 30, 32, 33, 34, 37, 38, 39, 40, 41, 42, 43, 35, 36, 44, 45, 46, 47, 48, 50, 51, 52 and 53 with lime stained glass pane named ""
+					format gui slot 49 with {_item}:
+						play sound "ENTITY_CHICKEN_EGG" at volume 10000 and pitch 2 for player at player
+						give player {_item}
+						close player's inventory
+				else:
+					play sound "ENTITY_VILLAGER_NO" at volume 10000 and pitch 1 for player at player
+				set {coffeefinalizing::%player%} to false
+		open gui "Coffee-%player%" to player
+		cancel event
+		
+command /coffee [<text>] [<text>]:
+	permission: coffeemachine.admin
+	trigger:
+		if arg-1 is "add":
+			if arg-2 is set:
+				if {coffeerecipes::*} does not contain arg-2:
+					add arg-2 to {coffeerecipes::*}
+					
+					add "%slot 0 of player%" to {_coffeerecipe::*}
+					add "%slot 1 of player%" to {_coffeerecipe::*}
+					add "%slot 2 of player%" to {_coffeerecipe::*}
+					
+					set {_coffeerecipe::*} to alphabetically sorted {_coffeerecipe::*}
+					
+					set {coffee::coffeerecipe::%arg-2%::*} to {_coffeerecipe::*}
+					set {coffee::result::%arg-2%} to slot 3 of player
+					
+					send "&b&lCOFFEE &3Created a new drink with items &b%{_coffeerecipe::*}%&3 and end result &b%{coffee::result::%arg-2%}%."
+					
+				else:
+					send "&b&lCOFFEE &3That drink already exists!"
+			
+			else:
+				send "&b&lCOFFEE &3Please supply a name."
+		
+		else if arg-1 is "remove":
+			remove arg-2 from {coffeerecipes::*}
+			delete {coffee::coffeerecipe::%arg-2%::*}
+			delete {coffee::result::%arg-2%}
+			send "&b&lCOFFEE &3Potion removed!"
+		
+		else if arg-1 is "list":
+			send "&b&lCOFFEE RECIPES"
+			send "%{coffeerecipes::*}%"
+			
+		else if arg-1 is "setblock":
+			set {coffeetable::%player's targeted block%} to true
+			send "&b&lCOFFEE &3That is now a coffee machine!"
+			
+		else if arg-1 is "info":
+			if arg-2 is set:
+				send "&b&lCOFFEE INFO"
+				send "&bName: &3%arg-2%"
+				send "&bcoffeerecipe: &3%{coffee::coffeerecipe::%arg-2%::*}%"
+				send "&bResult: &3%{coffee::result::%arg-2%}%"
+				
+			else:
+				send "&b&lCOFFEE &3Please supply a name."
+		
+		else:
+			send "&b/alchemy add <name> &3- add a potion"
+			send "&b/alchemy remove <name> &3- remove a potion"
