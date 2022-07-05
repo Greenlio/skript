@@ -1,0 +1,33 @@
+on npc rightclick:
+	if "%event-integer%" is "8":
+		open a chest inventory with 3 rows named "&6[Class-D] Jim" to player
+		set slot (all integers between 0 and 26) of player's current inventory to black stained glass pane named "&r"
+		set slot 11 of player's current inventory to yellow stained glass pane named "&eLevel 2 Card" with lore "&7Useful for escaping." and "" and "&aPrice: $30"
+		set slot 13 of player's current inventory to nametag named "&8Deagle" with lore "&7Useful for scrapping with fellow CDs." and "" and "&aPrice: $50"
+		set slot 15 of player's current inventory to {stolenmedkits}
+		
+		
+on inventory click:
+	if name of player's current inventory contains "[Class-D] Jim":
+		cancel event
+		if name of event-item contains "Level 2 Card":
+			if player's balance >= 30:
+				remove 30 from player's balance
+				give the player {l2}
+				send "&c- $30"
+			else:
+				send "&cNot enough money. You need &a$%30 - player's balance%&c more."
+		if name of event-item contains "Deagle":
+			if player's balance >= 50:
+				remove 50 from player's balance
+				console command "cra give %player% deagle"
+				send "&c- $50"
+			else:
+				send "&cNot enough money. You need &a$%50 - player's balance%&c more."
+		if name of event-item contains "Stolen Medkits":
+			if player's balance >= 75:
+				remove 75 from player's balance
+				give the player {stolenmedkit}
+				send "&c- $75"
+			else:
+				send "&cNot enough money. You need &a$%75 - player's balance%&c more."
