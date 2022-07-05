@@ -1,0 +1,134 @@
+# ------------------------------------------------------------------
+#
+#                    SCP Core | Made by Greenlio
+#
+#                Copyright Greenlio (c) 2022-current
+#
+# ------------------------------------------------------------------
+
+
+# ------------------------------------------------------------------
+#                               Key Cards
+# ------------------------------------------------------------------
+
+# NBT Method inspired by Dadrien
+
+function getCardLevel(t: text, p: player) :: integer:
+	if {_t} is "FP":
+		set {_fp} to tag "levelFP" of nbt of {_p}'s held item
+		return {_fp} parsed as an integer
+	if {_t} is "CI":
+		set {_ci} to tag "levelCI" of nbt of {_p}'s held item
+		return {_ci} parsed as an integer
+	# Leaves room for further customization. :)
+
+function buttonDenied(p: player, level: integer):
+	send action bar "&cAccess Denied! &7(Level %{_level}%&7+)" to {_p}
+	play sound "block.note_block.bit" with pitch 0.3 at {_p}
+
+function ciButtonDenied(p: player, level: integer):
+	send action bar "&cAccess Denied! &7(CI Level %{_level}%&7+)" to {_p}
+	play sound "block.note_block.bit" with pitch 0.3 at {_p}
+
+on right click on any button:
+	if player's gamemode is not creative: # Perhaps adventure? Anyways, spectators cant right click buttons.. right?
+		if {~cardcooldown::%player's uuid%} is set:
+			if difference between {~cardcooldown::%player's uuid%} and now >= 0.75 seconds: # using sk feature not many know, its quite swag.
+				set {~cardcooldown::%player's uuid%} to now 
+				set {_fp} to getCardLevel("FP", player)
+				set {_ci} to getCardLevel("CI", player)
+				# FP / Main Buttons
+				if event-block is birch button:
+					if {_fp} < 1:
+						buttonDenied(player, 1)
+						cancel event
+				else if event-block is oak button:
+					if {_fp} < 2:
+						buttonDenied(player, 2)
+						cancel event
+				else if event-block is jungle button:
+					if {_fp} < 3:
+						buttonDenied(player, 3)
+						cancel event
+				else if event-block is spruce button:
+					if {_fp} < 4:
+						buttonDenied(player, 4)
+						cancel event
+				else if event-block is dark oak button:
+					if {_fp} < 5:
+						buttonDenied(player, 5)
+						cancel event
+				else if event-block is crimson button:
+					if {_fp} < 6:
+						buttonDenied(player, 6)
+						cancel event
+				# CI Buttons
+				else if event-block is stone button:
+					if {_ci} < 1:
+						ciButtonDenied(player, 1)
+						cancel event
+				else if event-block is polished blackstone button:
+					if {_ci} < 2:
+						ciButtonDenied(player, 2)
+						cancel event
+				# room for more is open
+
+
+				if event is not cancelled:
+					send action bar "&aAccess Granted!" to player
+					play sound "block.note_block.bit" with pitch 3 at player
+
+# Turned into function with advice from budgo and HaahL
+
+function giveCard(type: text, p: player):
+	if {_type} is "omni":
+		set {_nbt} to nbt compound from "{levelFP:10,levelCI:10}"
+		give {_p} blue stained glass pane of curse of vanishing 1 named "&8OMNI-card" with nbt {_nbt}
+	else if {_type} is "maxfp":
+		set {_nbt} to nbt compound from "{levelFP:10}"
+		give {_p} purple stained glass pane of curse of vanishing 1 named "&8OMNI-FP-card" with nbt {_nbt}
+	else if {_type} is "maxci":
+		set {_nbt} to nbt compound from "{levelCI:10}"
+		give {_p} cyan stained glass pane of curse of vanishing 1 named "&8OMNI-CI-card" with nbt {_nbt}
+	# Normal / FP Cards
+	else if {_type} is "l6":
+		set {_nbt} to nbt compound from "{levelFP:6}"
+		give {_p} black stained glass pane named "&8L6-card" with nbt {_nbt}
+	else if {_type} is "l5":
+		set {_nbt} to nbt compound from "{levelFP:5}"
+		give {_p} red stained glass pane named "&8L5-card" with nbt {_nbt}
+	else if {_type} is "l4":
+		set {_nbt} to nbt compound from "{levelFP:4}"
+		give {_p} green stained glass pane named "&8L4-card" with nbt {_nbt}
+	else if {_type} is "l3":
+		set {_nbt} to nbt compound from "{levelFP:3}"
+		give {_p} light gray stained glass pane named "&8L3-card" with nbt {_nbt}
+	else if {_type} is "l2":
+		set {_nbt} to nbt compound from "{levelFP:2}"
+		give {_p} gray stained glass pane named "&8L2-card" with nbt {_nbt}
+	else if {_type} is "l1":
+		set {_nbt} to nbt compound from "{levelFP:1}"
+		give {_p} pink stained glass pane named "&8L1-card" with nbt {_nbt}
+	# CI Cards
+	else if {_type} is "ci1":
+		set {_nbt} to nbt compound from "{levelCI:1}"
+		give {_p} lime stained glass pane named "&8CI1-card" with nbt {_nbt}
+	else if {_type} is "ci2":
+		set {_nbt} to nbt compound from "{levelCI:2}"
+		give {_p} yellow stained glass pane named "&8CI2-card" with nbt {_nbt}
+	else:
+		send action bar "&cInvalid Card!" to {_p}
+		play sound "block.note_block.bit" with pitch 0.3 at {_p}
+
+
+command /getCard [<text>]:
+	permission: scpcore.getCard
+	permission message: &3[SCP] &7No Permission.
+	trigger:
+		giveCard(arg-1, command sender)
+
+# ------------------------------------------------------------------
+#                            Combat Tag
+# ------------------------------------------------------------------
+				
+# Coming Soon (probably in a few days or today <3)
