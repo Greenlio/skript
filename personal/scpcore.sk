@@ -140,7 +140,7 @@ command /radio [<string>]:
 # To replicate - copy the command, change permissions to scpcore.radio, change prefix to command, and boom.
 
 # ------------------------------------------------------------------
-#							 Combat Tag
+#			     Combat Tag
 # ------------------------------------------------------------------
 
 # I don't really like this, but it's the best I can do on a personal level. Sorry.
