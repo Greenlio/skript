@@ -128,7 +128,75 @@ command /getCard [<text>]:
 		giveCard(arg-1, command sender)
 
 # ------------------------------------------------------------------
-#                            Combat Tag
+#                             Radio
 # ------------------------------------------------------------------
-				
-# Coming Soon (probably in a few days or today <3)
+
+command /radio [<string>]:
+	permission: scpcore.radio
+	trigger:
+		arg-1 is set
+		send "&2[Radio] %player's prefix% %player%&f: &7%args%" to all players where [player has permission "scpcore.radio"]
+
+# To replicate - copy the command, change permissions to scpcore.radio, change prefix to command, and boom.
+
+# ------------------------------------------------------------------
+#							 Combat Tag
+# ------------------------------------------------------------------
+
+# I don't really like this, but it's the best I can do on a personal level. Sorry.
+
+on damage:
+    if attacker is player:
+        if {~combattag::%attacker%} is not set:
+            set {~combattag::%attacker%} to true
+            set {~timeleft::%attacker%} to 10
+            while {~combattag::%attacker%} is set:
+                send action bar "&cYou are currently in combat for &4%{~timeleft::%attacker%}% &4seconds&c." to attacker
+                wait 1 seconds
+                subtract 1 from {~timeleft::%attacker%}
+                if {~timeleft::%attacker%} is 0:
+                    send action bar "&aYou are no longer in combat." to attacker
+                    delete {~combattag::%attacker%}
+                    delete {~timeleft::%attacker%}
+                    stop
+        set {~timeleft::%attacker%} to 10
+    if victim is player:
+        if {~combattag::%victim%} is not set:
+            set {~combattag::%victim%} to true
+            set {~timeleft::%victim%} to 10
+            while {~combattag::%victim%} is set:
+                send action bar "&cYou are currently in combat for &4%{~timeleft::%victim%}% &4seconds&c." to victim
+                wait 1 seconds
+                subtract 1 from {~timeleft::%victim%}
+                if {~timeleft::%victim%} is 0:
+                    send action bar "&aYou are no longer in combat." to victim
+                    delete {~combattag::%victim%}
+                    delete {~timeleft::%victim%}
+                    stop
+            set {~timeleft::%victim%} to 10
+
+on death:
+    if victim is player:
+        if {~combattag::%player%} is set:
+            send action bar "&aYou are no longer in combat." to player
+            delete {~combattag::%player%}
+            delete {~timeleft::%player%}
+            stop
+
+on quit:
+    if {~combattag::%player%} is set:
+        kill player
+        delete {~combattag::%player%}
+        set {~combatlog.done::%player%} to true
+
+on join:
+    if {~combatlog.done::%player%} is set:
+        delete {~combatlog.done::%player%}
+        wait 2 seconds
+        send action bar "&cYou died because you logged out during combat." to player
+
+on teleport:
+    if {~combattag::%player%} is set:
+        cancel event
+        send action bar "&cYou can't teleport during combat." to player
+		
