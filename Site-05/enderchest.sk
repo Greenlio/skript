@@ -1,0 +1,62 @@
+# ------------------------------------------------------------------------------------------------------------------------------------------------
+#            Change {credits::%player's uuid%} to your balance variable or just "player's balance" depending on your economy.
+# ------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Made by Greenlio#4514 for Site-05 owned by tremblero
+
+on right click on ender chest:
+    cancel event
+    play sound "block.ender_chest.open" at event-block
+    open chest inventory with 3 rows named "&7Enderchest" to player
+    set slot (all integers from 0 to 26) of player's current inventory to gray stained glass pane named "&7"
+    set slot 12 of player's current inventory to ender chest named "&7Main Enderchest" with lore "&3Click to access your default enderchest!"
+    if {extraechest::have::%player's uuid%} is set:
+        set slot 14 of player's current inventory to ender chest named "&7Extra Enderchest" with lore "&3Click to access your extra enderchest."
+    else:
+        set slot 14 of player's current inventory to ender chest named "&7Purchase Extra Enderchest" with lore "&3Click to purchase an extra enderchest. &a($15,000)"
+
+on inventory click:
+    if name of player's current inventory is "&7Enderchest":
+        cancel event
+        set {_balance} to {credits::%player's uuid%}
+        if name of event-item contains "Main Enderchest":
+            open inventory of player's targeted block
+        if name of event-item is "&7Extra Enderchest":
+            open chest inventory with 3 rows named "&7Extra Enderchest" to player
+            loop {extraechest::contents::%player's uuid%::*}:
+                add 1 to {_n}
+                set slot ({_n}-1) of player's current inventory to loop-value
+            # this should work, just this? maybe.
+        if name of event-item is "&7Purchase Extra Enderchest":
+            if {_balance} >= 15000:
+                send action bar "&c- ¢15,000 (Extra Enderchest)" to player
+                remove 15000 from {credits::%player's uuid%}
+                set {extraechest::have::%player's uuid%} to true
+                # open enderchest gui
+                open chest inventory with 3 rows named "&7Extra Enderchest" to player
+            else:
+                close player's inventory
+                send action bar "&cNot enough money!" to player
+
+on inventory close:
+    if name of player's current inventory contains "Ender Chest":
+        play sound "block.ender_chest.close" at player
+    if name of player's current inventory is "&7Extra Enderchest":
+        send action bar "&aSaving.." to player
+        loop 27 times:
+            add 1 to {_n}
+            set {extraechest::contents::%player's uuid%::%{_n}%} to slot ({_n}-1) of player's current inventory
+                # basic inventory saving shenanigans
+        send action bar "&aExtra Enderchest saved!" to player
+
+# admin things - ofc, people will try to be cringe and store weird stuff in extra ecs.
+on inventory click:
+    if name of player's current inventory contains "&7Extra Enderchest of":
+        cancel event
+command /extraec [<offline player>]:
+    trigger:
+        {authed::%player's uuid%} is set
+        open chest inventory with 3 rows named "&7Extra Enderchest of %arg 1%" to player
+        loop {extraechest::contents::%arg-1's uuid%::*}:
+            add 1 to {_n}
+            set slot ({_n}-1) of player's current inventory to loop-value
