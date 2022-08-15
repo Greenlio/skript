@@ -179,10 +179,10 @@ on damage:
 
 on death:
     if victim is player:
-        if {~combattag::%player%} is set:
-            send action bar "&aYou are no longer in combat." to player
-            delete {~combattag::%player%}
-            delete {~timeleft::%player%}
+        if {~combattag::%victim%} is set:
+            send action bar "&aYou are no longer in combat." to victim
+            delete {~combattag::%victim%}
+            delete {~timeleft::%victim%}
             stop
 
 on quit:
