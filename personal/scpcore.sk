@@ -15,10 +15,12 @@
 
 function getCardLevel(t: text, p: player) :: integer:
 	if {_t} is "FP":
-		set {_fp} to tag "levelFP" of nbt of {_p}'s held item
+		set {_item} to nbt compound of player's held item
+		set {_fp} to tag "tag;levelFP" of {_item}
 		return {_fp} parsed as an integer
 	if {_t} is "CI":
-		set {_ci} to tag "levelCI" of nbt of {_p}'s held item
+		set {_item} to nbt compound of player's held item
+		set {_ci} to tag "tag;levelCI" of {_item}
 		return {_ci} parsed as an integer
 	# Leaves room for further customization. :)
 
