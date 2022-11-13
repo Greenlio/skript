@@ -15,13 +15,9 @@
 
 function getCardLevel(t: text, p: player) :: integer:
 	if {_t} is "FP":
-		set {_item} to nbt compound of {_p}'s held item
-		set {_fp} to tag "tag;levelFP" of {_item}
-		return {_fp} parsed as an integer
+		return tag "tag;levelFP" of {_item} of nbt compound of {_p}'s held item
 	if {_t} is "CI":
-		set {_item} to nbt compound of {_p}'s held item
-		set {_ci} to tag "tag;levelCI" of {_item}
-		return {_ci} parsed as an integer
+		return tag "tag;levelCI" of {_item} of nbt compound of {_p}'s held item
 	# Leaves room for further customization. :)
 
 function buttonDenied(p: player, level: integer):
